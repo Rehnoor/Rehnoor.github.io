@@ -14,9 +14,7 @@ export default function PhotographyPage() {
         Photography
       </h1>
       <p className="mt-3 max-w-2xl text-foreground/70">
-        A growing collection shot on the side — hikes, flights, and cities
-        along the way. This gallery is scaffolded with placeholders for now;
-        real photos are on their way.
+        Some snapshots of my adventures. Moments I paused to slow down and capture beauty in the chaos around us.
       </p>
       <div className="mt-12">
         <PhotoGrid photos={photos} tags={photoTags} />
