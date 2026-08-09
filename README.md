@@ -35,8 +35,3 @@ CONTACT_FROM_EMAIL=   # optional, defaults to Resend's sandbox sender
 The hero gradient (`lib/gradient.js`) is adapted from Stripe's WebGl Gradient
 Animation, via [kevinhufnagl.com](https://kevinhufnagl.com/).
 
-## Legacy site
-
-The pre-migration static site (`index.html`, `styles.css`, `scripts/`,
-`icons/`, `images/`) is kept in the repo for reference during the migration
-and can be removed once the Next.js version is live.
