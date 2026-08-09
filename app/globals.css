@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --fg: #171717;
+  --bg-elevated: #f4f6fb;
+  --border-color: #e2e5ec;
+
+  --accent-color: #941B0C;
+  --secondary-color: #BC3908;
+
+  --gradient-color-1: #220901;
+  --gradient-color-2: #621708;
+  --gradient-color-3: #941B0C;
+  --gradient-color-4: #BC3908;
+
+
+    /* --accent-color: #3A506B;
+  --secondary-color: #5BC0BE;
+
+  --gradient-color-1: #0B132B;
+  --gradient-color-2: #1C2541;
+  --gradient-color-3: #3A506B;
+  --gradient-color-4: #5BC0BE; */
+
+}
+
+.dark {
+  --bg: #0b0e17;
+  --fg: #ededed;
+  --bg-elevated: #131826;
+  --border-color: #232a3b;
+
+  --accent-color: #e94560;
+  --secondary-color: #5a9fff;
+
+  --gradient-color-1: #1a1a2e;
+  --gradient-color-2: #16213e;
+  --gradient-color-3: #0f3460;
+  --gradient-color-4: #e94560;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-elevated: var(--bg-elevated);
+  --color-border: var(--border-color);
+  --color-accent: var(--accent-color);
+  --color-secondary: var(--secondary-color);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+::selection {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Plain opacity crossfade for route changes (PageTransition). The group's
+   default box-resize animation is disabled — without this, the browser
+   also morphs the transition's bounding box from the old page's size to
+   the new page's, which shows up as a visible stretch/scale on routes
+   with different content heights. */
+::view-transition-group(page-content) {
+  animation: none;
+}
+
+::view-transition-old(page-content) {
+  animation: 120ms ease-out both page-fade-out;
+}
+
+::view-transition-new(page-content) {
+  animation: 180ms ease-in 120ms both page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(page-content),
+  ::view-transition-new(page-content) {
+    animation-duration: 0s;
+  }
+}
