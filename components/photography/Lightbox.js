@@ -70,7 +70,7 @@ export default function Lightbox({ photo, onClose, onPrev, onNext }) {
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:right-8 sm:top-8"
+            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:right-8 sm:top-8"
           >
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M6 6l12 12M18 6L6 18" />
@@ -84,7 +84,7 @@ export default function Lightbox({ photo, onClose, onPrev, onNext }) {
               onPrev();
             }}
             aria-label="Previous photo"
-            className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:left-8"
+            className="absolute left-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:left-8"
           >
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
@@ -251,7 +251,7 @@ export default function Lightbox({ photo, onClose, onPrev, onNext }) {
               onNext();
             }}
             aria-label="Next photo"
-            className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:right-8"
+            className="absolute right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white sm:right-8"
           >
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
